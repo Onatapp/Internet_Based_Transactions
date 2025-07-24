@@ -46,10 +46,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //** Uygulama da çalıştırılacak Volley Methodu: Ekleme, Güncelleme, Silme, Listeleme, Select
-        kisiGuncelleVolley();
+        kisiListeleVolley();
     }
 
-    void kisiEkleVolley() {
+    public void kisiEkleVolley() {
         //** VOLLEY Kütüphanesinin Android uygulama da kaydetme işlemi.
         String url = "https://restfuldb.onatsomer.com/kisiler/insert_kisiler.php";  //--> Buraya çalışacak ilgili web servisin URL'si yazılıyor.
 
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         Volley.newRequestQueue(this).add(request);
     }
 
-    void kisiGuncelleVolley() {
+    public void kisiGuncelleVolley() {
 
         String url = "https://restfuldb.onatsomer.com/kisiler/update_kisiler.php";
 
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    void kisiSilVolley() {
+    public void kisiSilVolley() {
 
         String url = "https://restfuldb.onatsomer.com/kisiler/delete_kisiler.php";
 
@@ -205,7 +205,7 @@ public class MainActivity extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(response);
                     JSONArray arananKisiler = jsonObject.getJSONArray("kisiler");
 
-                    for (int i = 0; i < arananKisiler.length(); i++){
+                    for (int i = 0; i < arananKisiler.length(); i++) {
 
                         JSONObject kisi = arananKisiler.getJSONObject(i);
                         int kisiID = kisi.getInt("kisi_id");
@@ -217,7 +217,7 @@ public class MainActivity extends AppCompatActivity {
                         Log.e("KİŞİ TELEFON", kisiTel);
                         Log.e("***************", "***************");
                     }
-                } catch (JSONException e){
+                } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
