@@ -36,7 +36,15 @@ android {
 }
 
 dependencies {
+    // VOLLEY Kütüphanesi
     implementation(libs.volley)
+
+    // RETROFIT Kütüphanesi
+    implementation (libs.retrofit)
+
+    // JSON PARSE Dönüşümü için Kütüphaneler
+    implementation (libs.converter.gson)
+    implementation(libs.gson)
 
     implementation(libs.appcompat)
     implementation(libs.material)
