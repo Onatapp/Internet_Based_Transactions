@@ -36,6 +36,9 @@ android {
 }
 
 dependencies {
+    // PICASSO Kütüphanesi
+    implementation("com.squareup.picasso:picasso:2.8")
+
     // VOLLEY Kütüphanesi
     implementation(libs.volley)
 
