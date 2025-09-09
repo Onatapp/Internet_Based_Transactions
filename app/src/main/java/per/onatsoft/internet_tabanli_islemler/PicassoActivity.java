@@ -15,6 +15,7 @@ import per.onatsoft.internet_tabanli_islemler.databinding.ActivityPicassoBinding
 public class PicassoActivity extends AppCompatActivity {
 
     private ActivityPicassoBinding bind;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,10 +33,10 @@ public class PicassoActivity extends AppCompatActivity {
 
         //** Picasso kütüphanesi kullanımları
         bind.btnLocal.setOnClickListener(view -> {
-
+            //* Yerel dosyalardan bir resim yükleme kullanımı.
             Picasso.get()
                     .load(R.drawable.mobil_destek_logo)
-                    .resize(500,500)
+                    .resize(400, 400)
                     .into(bind.imgResim);
         });
 
@@ -47,7 +48,8 @@ public class PicassoActivity extends AppCompatActivity {
         });
 
         bind.btnInternet1.setOnClickListener(view -> {
-
+            //* İnternetten resmin URL bağlantısıyla uygulamaya yükleme kullanımı.
+            //* PLaceholder komutu, internetten gelen resim uygulamaya yüklenene kadar kullanıcıya görünecek olan geçici resim tanımlanmasına işe yarıyor.
             String url = "http://kasimadalan.pe.hu/filmler/resimler/inception.png";
             Picasso.get()
                     .load(url)

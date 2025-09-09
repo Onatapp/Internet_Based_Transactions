@@ -7,6 +7,7 @@ android {
     compileSdk = 35
 
     buildFeatures {
+        //* View Binding Kurulumu
         viewBinding = true
     }
 
